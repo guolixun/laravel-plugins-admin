@@ -1,0 +1,42 @@
+<?php
+
+namespace DummyNamespace;
+
+use Bennent\Geauth\Controllers\AdminBaseController;
+
+/**
+ * Class HomeController
+ * @adminMenuRoot(
+ *     'name'   => 'class name',
+ *     'action' => 'class remark',
+ *     'parent' => '父级，默认#,如仅为菜单类型，路由后拼接即可',
+ *     'url'    => 'admin/home/#',
+ *     'type'   => 0(默认只作为菜单);1(有界面可访问菜单);2(无界面可访问菜单),
+ *     'display'=> true(是否显示),
+ *     'order'  => 10000(排序),
+ *     'icon'   => 'layui-icon layui-icon-app',
+ *     'remark' => ''
+ * )
+ */
+class HomeController extends Controller
+{
+
+    /**
+     * 产品标签管理
+     * @adminMenu(
+     *     'name'   => '产品标签管理',
+     *     'parent' => 'admin/home/#',
+     *     'router' => 'admin/home/index',
+     *     'display'=> true,
+     *     'hasView'=> true,
+     *     'order'  => 50,
+     *     'icon'   => 'layui-icon layui-icon-note',
+     *     'remark' => '',
+     *     'param'  => ''
+     * )
+     */
+    public function index()
+    {
+        return 'welcome to ge-auth';
+    }
+}

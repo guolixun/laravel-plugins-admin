@@ -1,0 +1,13 @@
+<?php
+namespace App\Http\Controllers\Admin;
+
+use Illuminate\Support\Facades\Route;
+
+Route::group([
+    'as'            => config('admin.route.prefix') . '.',
+    'middleware'    => ['admin', \Bennent\Geauth\Middleware\AdminAuth::class]
+], function (\Illuminate\Routing\Router $router) {
+
+    $router->get('/', [HomeController::class, 'index'])->name('home');
+
+});
