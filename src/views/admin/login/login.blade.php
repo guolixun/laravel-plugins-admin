@@ -8,8 +8,8 @@
     <div class="layadmin-user-login layadmin-user-display-show" id="LAY-user-login" style="display: none;">
         <div class="layadmin-user-login-main">
             <div class="layadmin-user-login-box layadmin-user-login-header">
-                <h2>Laravel-plugins-admin</h2>
-                <p>Laravel-plugins-admin管理平台</p>
+                <h2>{{ sysConf('site_title') }}</h2>
+                <p>{{ sysConf('site_name') }}</p>
             </div>
             <div class="layadmin-user-login-box layadmin-user-login-body layui-form">
                 <div class="layui-form-item">

@@ -3,25 +3,29 @@ namespace Bennent\Geauth\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\DB;
 
 class AdminBaseController extends Controller
 {
     public function __construct()
     {
-        $this->_webSite();
+        if(!$this->checkBlackIP()) abort('403', '禁止访问');
     }
 
-    /**
-     * @notes:获取站点信息
-     * @user: Bennent_G
-     */
-    private function _webSite()
+    private function getSettings($name)
     {
-        /*Cache::remember('siteName', 7200, function () {
-            return sysConf('site_name');
-        });
-        Cache::remember('siteTitle', 7200, function () {
-            return sysConf('site_title');
-        });*/
+        return DB::table(config('admin.database.setting_table'))->where('name', $name)->value('value');
     }
+
+    public function checkBlackIP()
+    {
+        $blackIps = $this->getSettings('black_ip');
+        if ($blackIps == '#') {
+            return true;
+        }else{
+            return in_array(request()->ip(), explode('#', $blackIps)) ? false : true;
+        }
+        return false;
+    }
+
 }

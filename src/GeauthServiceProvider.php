@@ -15,7 +15,6 @@ class GeauthServiceProvider extends ServiceProvider
     public function register()
     {
         // register our controller
-        $this->app->make('Bennent\Geauth\Controllers\HelloWorldController');
         $this->app->make('Bennent\Geauth\Controllers\AdminBaseController');
         $this->app->make('Bennent\Geauth\Controllers\LoginController');
         $this->app->make('Bennent\Geauth\Controllers\IndexController');
@@ -33,7 +32,7 @@ class GeauthServiceProvider extends ServiceProvider
     public function boot()
     {
         // 注册辅助函数
-        //require_once(__DIR__ . '/helpers.php');
+        require_once(__DIR__ . '/helpers.php');
         // 注册中间件
         require_once(__DIR__ . '/Middleware/AdminAuth.php');
         //注册中间trait
@@ -65,7 +64,7 @@ class GeauthServiceProvider extends ServiceProvider
             //发布静态文件
             __DIR__ . DIRECTORY_SEPARATOR . 'public' => public_path('geauth'),
             //发布辅助函数
-            __DIR__ . DIRECTORY_SEPARATOR . 'helpers.php' => app_path('helpers.php'),
+//            __DIR__ . DIRECTORY_SEPARATOR . 'helpers.php' => app_path('helpers.php'),
         ]);
     }
 }

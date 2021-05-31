@@ -2,9 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-// 测试demo
-Route::get('admin/hello', 'Bennent\Geauth\Controllers\HelloWorldController@hello');
-Route::get('hello/index', 'Bennent\Geauth\Controllers\HelloWorldController@index');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function() {
     // 登录
