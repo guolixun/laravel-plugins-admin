@@ -34,6 +34,14 @@ public function boot()
 }
 
 ```
+- 发布依赖扩展
+```
+php artisan vendor:publish --provider="Mews\Captcha\CaptchaServiceProvider"
+
+Notice
+验证码的配置文件在 config/captcha.php
+
+```
 - 安装完成后，目录结构如下：
 ```
 app
@@ -70,4 +78,4 @@ protected $middlewareGroups = [
 ];
 ```
 
-- Start Service，access http://localhost/admin, user[admin] pass[admin123]
+- Start Service，access http://localhost/admin, user[admin] pass[admin]
