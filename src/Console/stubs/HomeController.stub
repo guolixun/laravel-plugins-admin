@@ -18,7 +18,7 @@ use Bennent\Geauth\Controllers\AdminBaseController;
  *     'remark' => ''
  * )
  */
-class HomeController extends Controller
+class HomeController extends AdminBaseController
 {
 
     /**

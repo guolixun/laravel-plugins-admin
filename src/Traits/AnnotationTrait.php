@@ -1,13 +1,17 @@
 <?php
+
 namespace Bennent\Geauth\Traits;
 
 use Bennent\Geauth\Models\Permission;
 use mindplay\annotations\AnnotationException;
 use mindplay\annotations\Annotations;
 
-trait AnnotationTrait {
+trait AnnotationTrait
+{
 
-    public $filterClass = [];
+    public static $filterClass = [
+        'HomeController'
+    ];
 
     public static function importMenus($app)
     {
@@ -24,9 +28,9 @@ trait AnnotationTrait {
             foreach ($controllers as $controller) {
                 $controller      = preg_replace('/\.php$/', '', $controller);
                 $controllerName  = preg_replace("/Controller$/", '', $controller);
-                $controllerClass = 'App'.DIRECTORY_SEPARATOR.'Http'.DIRECTORY_SEPARATOR.'Controllers'.DIRECTORY_SEPARATOR.'admin'.DIRECTORY_SEPARATOR."$controller";
+                $controllerClass = 'App'.DIRECTORY_SEPARATOR.'Http'.DIRECTORY_SEPARATOR.'Controllers'.DIRECTORY_SEPARATOR.config('admin.app.name').DIRECTORY_SEPARATOR."$controller";
                 //排除公共类
-                if (!in_array($controller, (new self())->filterClass)) {
+                if (!in_array($controller, self::$filterClass)) {
                     try {
                         $menuAnnotations = Annotations::ofClass($controllerClass, '@adminMenuRoot');
                         //类注释更新

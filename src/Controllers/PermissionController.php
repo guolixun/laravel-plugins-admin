@@ -187,7 +187,7 @@ class PermissionController extends AdminBaseController
         if (!in_array($app, $apps)) {
             $this->error('应用' . $app . '不存在!');
         }*/
-        $newMenus = $this::importMenus($appPath);
+        $newMenus = \Bennent\Geauth\Traits\AnnotationTrait::importMenus($appPath);
         return response()->json('导入成功');
 
         /*$newMenus  = MenuLogic::importMenus($appPath);

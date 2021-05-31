@@ -109,7 +109,7 @@
                     data: {_method:"PUT"},
                     success: function(res) {
                         console.log(res);
-                        layer.msg(res);
+                        layer.msg(res, function() { table.reload('permission') });
                     }
                 })
                 break;

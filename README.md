@@ -1,5 +1,5 @@
 
-## About Laravel-plugins-admin
+## Laravel-plugins-admin
 
 plugins-admin是基于laravel8的RBAC权限的纯粹后台管理UI扩展包。
 
@@ -80,3 +80,9 @@ protected $middlewareGroups = [
 ```
 
 - Start Service，access http://localhost/admin, user[admin] pass[admin]
+
+- 说明
+```
+1. 全局提供Controller基类AdminBaseController(继承Bennent\Geauth\Controllers\AdminBaseController)
+2. 权限自动过滤Admin\HomeController,请注意！！！
+```
