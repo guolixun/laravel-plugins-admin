@@ -50,6 +50,6 @@ return [
         // menu table
         'menu_table' => 'permissions',
         //setting table
-        'setting_table' => 'setting'
+        'setting_table' => 'settings'
     ],
 ];

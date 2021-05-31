@@ -17,6 +17,23 @@ php artisan vendor:publish --provider="Bennent\laravel-plugins-admin\GeauthServi
 ```
 php artisan geauth:install
 ```
+```
+- Notice
+运行这个命令的时候，如果遇到了下面的错误:
+SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 1000 bytes (SQL: alter tableusersadd uniqueusers_email_unique(email))
+参考如下解决：
+在 app\Providers\AppServiceProvider.php修改如下
+<?php
+...
++++ use Illuminate\Support\Facades\Schema;
+...
+
+public function boot()
+{
++++ Schema::defaultStringLength(191);   
+}
+
+```
 - 安装完成后，目录结构如下：
 ```
 app

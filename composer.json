@@ -12,9 +12,15 @@
         "roles"
     ],
     "license": "MIT",
-    "requires": {
-        "php": ">=7.2",
-        "laravel/framework": "~7.0",
+    "authors": [
+        {
+            "name": "bennent_G",
+            "email": "guolixun@163.com",
+            "homepage": "https://blog,csdn.net/glx490676405",
+            "role": "Developer"
+        }
+    ],
+    "require": {
         "mews/captcha": "^3.2",
         "mindplay/annotations": "^1.3"
     },
