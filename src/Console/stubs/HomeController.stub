@@ -37,6 +37,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return 'welcome to ge-auth';
+        return 'welcome to laravel-plugins-admin';
     }
 }
