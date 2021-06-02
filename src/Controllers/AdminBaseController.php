@@ -9,7 +9,9 @@ class AdminBaseController extends Controller
 {
     public function __construct()
     {
-        if(!$this->checkBlackIP()) abort('403', '禁止访问');
+        if (file_exists(public_path() . '/install.lock')) {
+            if(!$this->checkBlackIP()) abort('403', '禁止访问');
+        }
     }
 
     private function getSettings($name)
