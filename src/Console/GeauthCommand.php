@@ -44,10 +44,11 @@ class GeauthCommand extends Command
      */
     public function handle()
     {
-
         $this->initDatabase();
 
         $this->initAdminDirectory();
+        //install file lock
+        $this->createInstallLock();
     }
 
     /**
@@ -133,6 +134,15 @@ class GeauthCommand extends Command
 
         $this->laravel['files']->put($file, $contents);
         $this->line('<info>Routes file was created:</info> '.str_replace(base_path(), '', $file));
+    }
+
+    /**
+     * create install.lock
+     * user: Bennent_G
+     */
+    public function createInstallLock()
+    {
+        @touch(public_path() . '/install.lock');
     }
 
 }

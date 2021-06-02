@@ -11,7 +11,7 @@ composer require bennent/laravel-plugins-admin
 ```
 - 发布资源
 ```
-php artisan vendor:publish --provider="Bennent\laravel-plugins-admin\GeauthServiceProvider"
+php artisan vendor:publish --provider="Bennent\Geauth\GeauthServiceProvider"
 ```
 - 安装
 ```

@@ -9,6 +9,7 @@ return [
     |--------------------------------------------------------------------------
     */
     'app' => [
+        'tag' => 'laravel-plugins-admin',
         'name' => 'Admin',
     ],
 
@@ -55,16 +56,10 @@ return [
     */
     'database' => [
         // user tables and model
-//        'users_table' => 'users',
-//        'users_model' => Bennent\Geauth\Models\Manager::class,
-
+        // 'users_table' => 'users',
         // menu table
         'menu_table' => 'permissions',
         //setting table
         'setting_table' => 'settings'
     ],
-
-    'install' => [
-        'tag' => Str::random(40)
-    ]
 ];
