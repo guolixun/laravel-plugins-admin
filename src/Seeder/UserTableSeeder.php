@@ -1,8 +1,9 @@
 <?php
-namespace Bennent\Geauth\Models;
+namespace Bennent\Geauth\Seeder;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Bennent\Geauth\Models\Manager;
 
 class UserTableSeeder extends Seeder
 {
@@ -62,6 +63,12 @@ class UserTableSeeder extends Seeder
             ['name' => 'OBS_http_domain', 'value' => ''],
             ['name' => 'OBS_access_key', 'value' => ''],
             ['name' => 'OBS_secret_key', 'value' => ''],
+            ['name' => 'OSS_http_protocol', 'value' => ''],
+            ['name' => 'OSS_point', 'value' => ''],
+            ['name' => 'OSS_bucket', 'value' => ''],
+            ['name' => 'OSS_http_domain', 'value' => ''],
+            ['name' => 'OSS_access_key', 'value' => ''],
+            ['name' => 'OSS_secret_key', 'value' => ''],
         ]);
     }
 }

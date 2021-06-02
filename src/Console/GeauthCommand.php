@@ -58,7 +58,7 @@ class GeauthCommand extends Command
     {
         $this->call('migrate');
 
-        $this->call('db:seed', ['--class' => \Bennent\Geauth\Models\UserTableSeeder::class]);
+        $this->call('db:seed', ['--class' => \Bennent\Geauth\Seeder\UserTableSeeder::class]);
     }
 
     /**
