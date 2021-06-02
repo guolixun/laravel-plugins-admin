@@ -1,4 +1,6 @@
 <?php
+use Illuminate\Support\Str;
+
 return [
 
     /*
@@ -61,4 +63,8 @@ return [
         //setting table
         'setting_table' => 'settings'
     ],
+
+    'install' => [
+        'tag' => Str::random(40)
+    ]
 ];
