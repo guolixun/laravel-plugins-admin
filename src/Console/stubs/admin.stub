@@ -8,6 +8,6 @@ Route::group([
     'middleware'    => ['admin', \Bennent\Geauth\Middleware\AdminAuth::class]
 ], function (\Illuminate\Routing\Router $router) {
 
-    $router->get('/', [HomeController::class, 'index'])->name('home');
+    $router->get('home', [HomeController::class, 'index'])->name('home');
 
 });
