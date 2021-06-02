@@ -12,6 +12,18 @@
 }
 
 /*红星标记*/
+.label-required-prev:before {
+    width: 1em;
+    color: red;
+    content: '*';
+    display: inline-block;
+    position: absolute;
+    text-align: left;
+    font-weight: 700;
+    line-height: 1.6em;
+    margin-left: -.8em;
+}
+
 .help-require:after {
     top: 6px;
     right: 5px;

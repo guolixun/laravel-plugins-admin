@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <div class="layui-card-body layui-form" layui-filter="obs-form" id="obs-form">
+    <form class="layui-card-body layui-form" layui-filter="obs-form" id="obs-form">
 
         <div class="color-text margin-left-40 margin-bottom-20 layui-code" style="border-left-width:1px;text-align: center;background-color: #fff;">
             <p class="margin-bottom-5 font-w7">文件将上传到华为云 OBS 存储，需要配置 OBS 公开访问及跨域策略</p>
@@ -10,7 +10,7 @@
         </div>
 
         <div class="layui-form-item">
-            <label class="layui-form-label label-required">
+            <label class="layui-form-label label-required-prev">
                 <span class="color-green font-w7">访问协议</span><br><span class="nowrap color-desc">Protocol</span>
             </label>
             <div class="layui-input-block">
@@ -28,7 +28,7 @@
         </div>
 
         <div class="layui-form-item">
-            <label class="layui-form-label">
+            <label class="layui-form-label label-required-prev">
                 <span class="color-green font-w7">存储区域</span><br><span class="nowrap color-desc label-required">Region</span>
             </label>
             <div class="layui-input-block">
@@ -46,41 +46,41 @@
         </div>
 
         <div class="layui-form-item">
-            <label class="layui-form-label" for="storage.OBS_bucket">
+            <label class="layui-form-label label-required-prev" for="storage.OBS_bucket">
                 <span class="color-green font-w7">空间名称</span><br><span class="nowrap color-desc">Bucket</span>
             </label>
             <div class="layui-input-block">
-                <input id="OBS_bucket" type="text" name="OBS_bucket" required value="{{ sysconf('OBS_bucket') }}" placeholder="请输入华为云OBS存储 Bucket (空间名称)" class="layui-input">
+                <input id="OBS_bucket" type="text" name="OBS_bucket" lay-verify="required" value="{{ sysconf('OBS_bucket') }}" placeholder="请输入华为云OBS存储 Bucket (空间名称)" class="layui-input">
                 <p class="layui-icon help-block">填写OBS存储空间名称，如：think-admin-OBS（需要是全区唯一的值，不存在时会自动创建）</p>
             </div>
         </div>
 
         <div class="layui-form-item">
-            <label class="layui-form-label" for="storage.OBS_http_domain">
+            <label class="layui-form-label label-required-prev" for="storage.OBS_http_domain">
                 <span class="color-green font-w7">访问域名</span><br><span class="nowrap color-desc">Domain</span>
             </label>
             <div class="layui-input-block">
-                <input id="OBS_http_domain" type="text" name="OBS_http_domain" required value="{{ sysconf('OBS_http_domain') }}" placeholder="请输入阿里云OBS存储 Domain (访问域名)" class="layui-input">
+                <input id="OBS_http_domain" type="text" name="OBS_http_domain" lay-verify="required" value="{{ sysconf('OBS_http_domain') }}" placeholder="请输入阿里云OBS存储 Domain (访问域名)" class="layui-input">
                 <p class="layui-icon help-block">填写OBS存储外部访问域名，如：static.ctolog.com</p>
             </div>
         </div>
 
         <div class="layui-form-item">
-            <label class="layui-form-label" for="storage.OBS_access_key">
+            <label class="layui-form-label label-required-prev" for="storage.OBS_access_key">
                 <span class="color-green font-w7">访问密钥</span><br><span class="nowrap color-desc">AccessKey</span>
             </label>
             <div class="layui-input-block">
-                <input id="OBS_access_key" type="text" name="OBS_access_key" required value="{{ sysconf('OBS_access_key') }}" placeholder="请输入阿里云OBS存储 AccessKey (访问密钥)" class="layui-input">
+                <input id="OBS_access_key" type="text" name="OBS_access_key" lay-verify="required" value="{{ sysconf('OBS_access_key') }}" placeholder="请输入阿里云OBS存储 AccessKey (访问密钥)" class="layui-input">
                 <p class="layui-icon help-block">可以在 [ 华为云 > 个人中心 ] 设置并获取到访问密钥</p>
             </div>
         </div>
 
         <div class="layui-form-item">
-            <label class="layui-form-label" for="storage.OBS_secret_key">
+            <label class="layui-form-label label-required-prev" for="storage.OBS_secret_key">
                 <span class="color-green font-w7">安全密钥</span><br><span class="nowrap color-desc">SecretKey</span>
             </label>
             <div class="layui-input-block">
-                <input id="OBS_secret_key" type="text" name="OBS_secret_key" required value="{{ sysconf('OBS_secret_key') }}" maxlength="43" placeholder="请输入阿里云OBS存储 SecretKey (安全密钥)" class="layui-input">
+                <input id="OBS_secret_key" type="text" name="OBS_secret_key" lay-verify="required" value="{{ sysconf('OBS_secret_key') }}" maxlength="43" placeholder="请输入阿里云OBS存储 SecretKey (安全密钥)" class="layui-input">
                 <p class="layui-icon help-block">可以在 [ 华为云 > 个人中心 ] 设置并获取到安全密钥</p>
             </div>
         </div>
@@ -92,7 +92,7 @@
             <button class="layui-btn layui-btn-sm layui-btn-normal" lay-submit lay-filter="obs">保存</button>
             <button class="layui-btn layui-btn-sm layui-btn-primary" id="reset">取消</button>
         </div>
-    </div>
+    </form>
 @endsection
 
 @section('script')

@@ -21,7 +21,7 @@ class GeauthServiceProvider extends ServiceProvider
         $this->app->make('Bennent\Geauth\Controllers\PermissionController');
         $this->app->make('Bennent\Geauth\Controllers\SettingController');
         //注册视图
-        $this->loadViewsFrom(__DIR__.'/views', 'geauth');
+        $this->loadViewsFrom(__DIR__.'/Views', 'geauth');
     }
 
     /**
@@ -46,7 +46,7 @@ class GeauthServiceProvider extends ServiceProvider
         //注册路由
         $this->loadRoutesFrom(__DIR__ . '/routes.php');
         //数据迁移
-        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/Database/migrations');
         //注册发布文件
         $this->registerPublishes();
 
@@ -60,9 +60,9 @@ class GeauthServiceProvider extends ServiceProvider
     {
         $this->publishes([
             //发布配置文件
-            __DIR__ . DIRECTORY_SEPARATOR . 'config' => config_path(),
+            __DIR__ . DIRECTORY_SEPARATOR . 'Config' => config_path(),
             //发布静态文件
-            __DIR__ . DIRECTORY_SEPARATOR . 'public' => public_path('geauth'),
+            __DIR__ . DIRECTORY_SEPARATOR . 'Public' => public_path('geauth'),
             //发布辅助函数
 //            __DIR__ . DIRECTORY_SEPARATOR . 'helpers.php' => app_path('helpers.php'),
         ]);
