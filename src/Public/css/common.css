@@ -5,7 +5,16 @@
 .layui-table-cell {
     height: auto;
 }
-
+/*icon字体图标*/
+.fa {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    margin-top: -7px;
+}
+.fa-unset {
+    position: unset;
+}
 /*nav缩进*/
 .nav-padding-left {
     padding-left: 10%;
