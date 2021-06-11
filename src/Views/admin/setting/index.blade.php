@@ -24,6 +24,11 @@
                     <a data-model="oss" data-load="{{ url('admin/setting/oss') }}" data-tips-text="切换并配置以阿里云OSS存储" class="layui-btn layui-btn-sm layui-btn-primary">阿里云OSS存储</a>
                 @endif
             </div>
+            <div class="margin-top-10 nowrap">
+                <p><b>本地服务器存储</b>：文件直接上传到本地服务器的 `/strorage/` 目录，不支持大文件上传，占用服务器磁盘空间，访问时消耗服务器带宽流量。</p>
+                <p><b>腾讯云COS存储</b>：文件直接上传到腾讯云 COS 存储空间，支持大文件上传，不占用服务器空间及服务器带宽流量，支持 CDN 加速访问，访问量大时推荐使用。</p>
+                <p><b>阿里云OSS存储</b>：文件直接上传到阿里云 OSS 存储空间，支持大文件上传，不占用服务器空间及服务器带宽流量，支持 CDN 加速访问，访问量大时推荐使用。</p>
+            </div>
         </div>
     </div>
     <div class="layui-card padding-20">

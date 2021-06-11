@@ -1,7 +1,10 @@
 /*
 * 后台通用样式
 */
-
+body {
+    color: #333;
+    font-size: 12px;
+}
 .layui-table-cell {
     height: auto;
 }
@@ -69,6 +72,13 @@
 /*左间距*/
 .margin-left-5 {
     margin-left: 5px !important;
+}
+/*上间距*/
+.margin-top-10 {
+    margin-top: 10px !important;
+}
+.margin-top-20 {
+    margin-top: 20px !important;
 }
 /*剧中对齐*/
 .text-align {

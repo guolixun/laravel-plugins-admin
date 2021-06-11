@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>laravel-plugins-admin</title>
+    <title>{{ sysConf('site_title') }}</title>
     <link rel="stylesheet" href="/geauth/layui/css/layui.css">
     <link rel="stylesheet" href="/geauth/plugins/awesome/fonts.css">
     <link rel="stylesheet" href="/geauth/css/admin.css">
