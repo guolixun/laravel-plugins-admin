@@ -173,8 +173,8 @@ class RoleController extends AdminBaseController
                 $data[$k]['role_id']       = $params['data']['rid'];
                 $data[$k]['permission_id'] = $permission;
             }
-            $resp = RolePermission::create($data);
-            return response()->json($resp);
+            RolePermission::insert($data);
+            return response()->json(true);
         }
         if (request()->isMethod('post')) {
             $rid             = request()->input('rid');

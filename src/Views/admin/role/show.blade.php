@@ -85,11 +85,9 @@
                 data: {_method:'PUT', data: dataObj},
                 url: "{{url('admin/role/auth')}}",
                 success: function(res) {
-                    if (res) {
-                        layer.msg('操作成功', {time: 2000});
-                        var index = parent.layer.getFrameIndex(window.name);
-                        parent.layer.close(index);
-                    }
+                    layer.msg('操作成功', {time: 2000});
+                    var index = parent.layer.getFrameIndex(window.name);
+                    parent.layer.close(index);
                 }
             })
         }

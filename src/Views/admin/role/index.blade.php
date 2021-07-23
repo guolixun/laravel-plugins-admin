@@ -158,34 +158,6 @@
                     ,content: url_
                     ,maxmin: true
                     ,area: ['98%', '95%']
-                    ,yes: function(index, layero){
-                        var iframeWindow = window['layui-layer-iframe'+ index]
-                            ,submitID = 'auth_submit'
-                            ,submit = layero.find('iframe').contents().find('#'+ submitID);
-                        //监听提交
-                        iframeWindow.layui.form.on('submit('+ submitID +')', function(data){
-                            var field = data.field; //获取提交的字段
-                            var nodes = [], checkedData = zTreeObj.getCheckedNodes(true);
-                            for (var i in checkedData) if (checkedData[i].id) nodes.push(checkedData[i].id);
-                            console.log(nodes);
-                            //提交 Ajax 成功后，静态更新表格中的数据
-                            {{--$.ajax({--}}
-                            {{--    type:'post',--}}
-                            {{--    url: "{{ url('admin/role/update/') }}",--}}
-                            {{--    data: {_method:"PUT", data:field},--}}
-                            {{--    success: function(res) {--}}
-                            {{--        if (res) {--}}
-                            {{--            layer.msg('操作成功');--}}
-                            {{--            table.reload('roles'); //数据刷新--}}
-                            {{--            layer.close(index); //关闭弹层--}}
-                            {{--        } else {--}}
-                            {{--            layer.msg('操作异常');--}}
-                            {{--        }--}}
-                            {{--    }--}}
-                            {{--});--}}
-                        });
-                        submit.trigger('click');
-                    }
                 });
                 break;
             case 'del':
