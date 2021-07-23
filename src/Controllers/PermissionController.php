@@ -9,7 +9,7 @@
 namespace Bennent\Geauth\Controllers;
 
 //use App\Http\Traits\MenuTraits;
-use Bennent\Geauth\Models\permission;
+use Bennent\Geauth\Models\Permission;
 use Illuminate\Http\Request;
 
 /**

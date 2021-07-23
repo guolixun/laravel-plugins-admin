@@ -20,7 +20,7 @@ class AdminAuth
         //处理登录用户session失效时重新跳转登录页面
         if(!$request->session()->has('users')) return redirect('/admin');
         $current_uri = substr($request->getRequestUri(), 1);
-        if (!\Bennent\Geauth\Traits\AdminAuthTrait::checkAuth($current_uri)) return response()->view('geauth::layouts.tip', '', 404);;
+        if (!\Bennent\Geauth\Traits\AdminAuthTrait::checkAuth($current_uri)) return response()->view('geauth::layouts.tip');
         return $next($request);
     }
 }

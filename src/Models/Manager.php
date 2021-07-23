@@ -40,8 +40,9 @@ class Manager extends Model
             $role_id = RoleManager::where('u_id', Session::get('users.id'))->value('id');
             $permissions = RolePermission::leftJoin('permissions', 'role_has_permissions.permission_id', '=', 'permissions.id')
                 ->whereIn('role_id', explode(',', $role_id))
+                ->where('status', 1)
                 ->select('permissions.id', 'permissions.pid', 'name', 'url', 'icon')
-                ->groupBy('permissions.id')
+                ->distinct('permissions.id')
                 ->get()
                 ->toArray();
         }

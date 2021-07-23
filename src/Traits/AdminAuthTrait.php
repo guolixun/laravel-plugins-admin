@@ -47,7 +47,7 @@ trait AdminAuthTrait
         if (in_array(self::$checkUid, self::$exceptUid)) return true;
         //其它管理员
         self::handleUserCacheMenu();
-        return in_array($uri, self::handleAuth());
+        return in_array(self::$uri, self::handleAuth());
     }
 
     /**
