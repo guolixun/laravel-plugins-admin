@@ -77,12 +77,13 @@ class ManagerController extends AdminBaseController
         if (request()->isMethod('post')) {
             DB::beginTransaction();
             try {
-                $params = request()->except('file');
+                $params             = request()->except('file');
                 $params['password'] = encrypt_pass($params['password']);
-                $role_ids = $params['role_id']; unset($params['role_id']);
+                $role_ids           = $params['role_id'];
+                unset($params['role_id']);
                 $manager = Manager::create($params);
                 RoleManager::create([
-                    'u_id' => $manager->id,
+                    'u_id'    => $manager->id,
                     'role_id' => $role_ids
                 ]);
                 DB::commit();
@@ -139,10 +140,10 @@ class ManagerController extends AdminBaseController
             try {
                 $params = request()->except('data.file');
                 Manager::where('id', $params['data']['id'])->update([
-                    'name'     => $params['data']['name'],
-                    'email'    => $params['data']['email'],
-                    'mobile'   => $params['data']['mobile'],
-                    'avatar'   => $params['data']['avatar']
+                    'name'   => $params['data']['name'],
+                    'email'  => $params['data']['email'],
+                    'mobile' => $params['data']['mobile'],
+                    'avatar' => $params['data']['avatar']
                 ]);
 
                 RoleManager::where('u_id', $params['data']['id'])->update([
@@ -159,9 +160,9 @@ class ManagerController extends AdminBaseController
         $user->role_ids = $user->role_id ? explode(',', $user->role_id) : [];
         //$user->avatar_  = $user->avatar ? asset('uploads/'.$user->avatar) : '';
         return view('geauth::admin.manager.edit', [
-            'user'  => $user,
+            'user'    => $user,
             'hasRole' => explode(',', RoleManager::where('u_id', $user->id)->value('role_id')),
-            'roles' => Role::all()
+            'roles'   => Role::all()
         ]);
     }
 

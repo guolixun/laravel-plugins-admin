@@ -3,6 +3,7 @@
 namespace Bennent\Geauth\Console;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Config;
 
 class GeauthCommand extends Command
 {
@@ -144,5 +145,4 @@ class GeauthCommand extends Command
     {
         @touch(public_path() . '/install.lock');
     }
-
 }

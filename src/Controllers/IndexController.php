@@ -20,17 +20,4 @@ class IndexController extends AdminBaseController
             'menus' => Manager::hasMenus()
         ]);
     }
-
-    //控制台1
-    public function console()
-    {
-        return view('geauth::admin.index.console');
-    }
-
-    //控制台2
-    public function show()
-    {
-        return view('geauth::admin.index.show');
-    }
-
 }

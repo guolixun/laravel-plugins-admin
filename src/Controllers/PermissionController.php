@@ -123,11 +123,11 @@ class PermissionController extends AdminBaseController
      *     'icon'   => '',
      * )
      */
-    public function edit(Request $request, $id=0)
+    public function edit(Request $request, $id = 0)
     {
-        if($request->isMethod('put')) {
+        if ($request->isMethod('put')) {
             //编辑
-            $params = $request->all();
+            $params      = $request->all();
             $permissions = Permission::where('id', $params['data']['id'])->update($params['data']);
             return response()->json($permissions);
         }

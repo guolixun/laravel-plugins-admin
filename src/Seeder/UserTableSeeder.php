@@ -33,7 +33,7 @@ class UserTableSeeder extends Seeder
             ['pid' => 7, 'name' =>'系统角色授权', 'url' => 'admin/role/auth', 'icon' => '', 'status' => 0, 'order' => 1, 'type' => 0],
 
 
-            ['pid' => 1, 'name' =>'系统管理员', 'url' => 'admin/manager', 'icon' => 'layui-icon layui-icon-group', 'status' => 1, 'order' => 3, 'type' => 0],
+            ['pid' => 1, 'name' =>'系统人员管理', 'url' => 'admin/manager', 'icon' => 'layui-icon layui-icon-group', 'status' => 1, 'order' => 3, 'type' => 0],
             // 管理员下子集菜单
             ['pid' => 11, 'name' =>'系统管理员添加', 'url' => 'admin/manager/create', 'icon' => '', 'status' => 0, 'order' => 1, 'type' => 0],
             ['pid' => 11, 'name' =>'系统管理员更新', 'url' => 'admin/manager/edit', 'icon' => '', 'status' => 0, 'order' => 1, 'type' => 0],
@@ -69,6 +69,8 @@ class UserTableSeeder extends Seeder
             ['name' => 'OSS_http_domain', 'value' => ''],
             ['name' => 'OSS_access_key', 'value' => ''],
             ['name' => 'OSS_secret_key', 'value' => ''],
+            ['name' => 'console_menu_name', 'value' => '控制台'],
+            ['name' => 'console_menu_url', 'value' => 'javascript:;'],
         ]);
     }
 }

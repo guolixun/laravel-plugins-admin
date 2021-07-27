@@ -68,18 +68,10 @@
 
                     <ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu">
                         <li data-name="home" class="layui-nav-item layui-nav-itemed">
-                            <a href="javascript:;" lay-tips="主页" lay-direction="2">
+                            <a href=@if(sysConf('console_menu_href')) {{ sysConf('console_menu_href') }} @else "javascript:;" @endif lay-tips="" lay-direction="2">
                                 <i class="layui-icon layui-icon-console"></i>
-                                <cite>控制台</cite>
+                                <cite>@if(sysConf('console_menu_name')) {{ sysConf('console_menu_name') }} @else 控制台 @endif </cite>
                             </a>
-                            <dl class="layui-nav-child">
-                                <dd data-name="console" class="layui-this" style="padding-left: 10%;">
-                                    <a lay-href="home/console.html"><i class="layui-icon layui-icon-find-fill"></i>主页一</a>
-                                </dd>
-                                <dd data-name="console" style="padding-left: 10%;">
-                                    <a lay-href="{{url('admin/show')}}"><i class="layui-icon layui-icon-app"></i>主页二</a>
-                                </dd>
-                            </dl>
                         </li>
                         @foreach($menus as $menu)
                             <li data-name="app" class="layui-nav-item">
@@ -143,7 +135,7 @@
             <!-- 主体内容 -->
             <div class="layui-body" id="LAY_app_body">
                 <div class="layadmin-tabsbody-item layui-show">
-                    <iframe src="{{ url('admin/console') }}" frameborder="0" class="layadmin-iframe"></iframe>
+                    <iframe src="{{ url('admin/setting') }}" frameborder="0" class="layadmin-iframe"></iframe>
                 </div>
             </div>
             <!-- 辅助元素，一般用于移动设备下遮罩 -->

@@ -40,9 +40,9 @@ trait AdminAuthTrait
      */
     public static function checkAuth($uri)
     {
-        if(!Session::has('users.id')) return false;
+        if (!Session::has('users.id')) return false;
         self::$checkUid = Session::get('users.id');
-        self::$uri = self::handleUri($uri);
+        self::$uri      = self::handleUri($uri);
         //超级管理员-放行
         if (in_array(self::$checkUid, self::$exceptUid)) return true;
         //其它管理员
@@ -59,13 +59,13 @@ trait AdminAuthTrait
     private static function handleUri($uri)
     {
         //处理路由?拼接参数形式
-        if(Str::contains($uri, '?')) {
-            return substr($uri, 0, strpos($uri,'?'));
+        if (Str::contains($uri, '?')) {
+            return substr($uri, 0, strpos($uri, '?'));
         }
         //处理路由后直接拼接参数形式
         if (substr_count($uri, '/') == 2 || substr_count($uri, '/') == 3) {
-            $uriLast = substr($uri, strrpos($uri,"/")+1);
-            return is_numeric($uriLast) ? substr($uri, 0, strrpos($uri,"/")) : $uri;
+            $uriLast = substr($uri, strrpos($uri, "/") + 1);
+            return is_numeric($uriLast) ? substr($uri, 0, strrpos($uri, "/")) : $uri;
         }
         return $uri;
     }
@@ -77,11 +77,11 @@ trait AdminAuthTrait
     private static function handleUserCacheMenu()
     {
         $roleIds = self::handleUserRole();
-        Cache::remember(self::$checkUid . '_auth', 43200, function() use ($roleIds) {
+        Cache::remember(self::$checkUid.'_auth', 43200, function () use ($roleIds) {
             return RolePermission::leftJoin('permissions', 'role_has_permissions.permission_id', '=', 'permissions.id')
                 ->whereIn('role_id', explode(',', $roleIds))
                 ->select('permissions.id', 'permissions.pid', 'name', 'url', 'icon')
-                ->groupBy('permissions.id')
+                ->distinct('permissions.id')
                 ->get()
                 ->toArray();
         });
@@ -95,7 +95,7 @@ trait AdminAuthTrait
      */
     private static function handleAuth()
     {
-        $urls = array_column(Cache::get(self::$checkUid . '_auth'), 'url');
+        $urls = array_column(Cache::get(self::$checkUid.'_auth'), 'url');
         return array_merge($urls, self::$commonUrls);
     }
 

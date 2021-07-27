@@ -6,6 +6,7 @@ use Bennent\Geauth\Models\Permission;
 use Bennent\Geauth\Models\RolePermission;
 use Illuminate\Http\Request;
 use Bennent\Geauth\Models\Role;
+
 //use Spatie\Permission\Models\Role as AuthRole;
 use Illuminate\Support\Facades\DB;
 
@@ -106,7 +107,7 @@ class RoleController extends AdminBaseController
             //更新
             $params = request()->all();
             $roles  = Role::where('id', request()->input('id', 0))->update($params['data']);
-            return response()->json($roles !== false ? 1 : 0 );
+            return response()->json($roles !== false);
         }
         $role = Role::find($id);
         return view('geauth::admin.role.edit', [
@@ -172,6 +173,8 @@ class RoleController extends AdminBaseController
             foreach ($params['data']['nodes'] as $k => $permission) {
                 $data[$k]['role_id']       = $params['data']['rid'];
                 $data[$k]['permission_id'] = $permission;
+                $data[$k]['created_at'] = date('Y-m-d H:i:s', time());
+                $data[$k]['updated_at'] = date('Y-m-d H:i:s', time());
             }
             RolePermission::insert($data);
             return response()->json(true);

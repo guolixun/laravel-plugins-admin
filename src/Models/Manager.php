@@ -37,7 +37,7 @@ class Manager extends Model
                 ->get()->toArray();
         } else {
             //不使用session,预防修改用户权限后用户在不重新登录的情况下无法获取新的授权。
-            $role_id = RoleManager::where('u_id', Session::get('users.id'))->value('id');
+            $role_id = RoleManager::where('u_id', Session::get('users.id'))->value('role_id');
             $permissions = RolePermission::leftJoin('permissions', 'role_has_permissions.permission_id', '=', 'permissions.id')
                 ->whereIn('role_id', explode(',', $role_id))
                 ->where('status', 1)

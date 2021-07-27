@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <form class="layui-card-body layui-form" layui-filter="obs-form" id="obs-form">
+    <div class="layui-card-body layui-form" layui-filter="obs-form" id="obs-form">
 
         <div class="color-text margin-left-40 margin-bottom-20 layui-code" style="border-left-width:1px;text-align: center;background-color: #fff;">
             <p class="margin-bottom-5 font-w7">文件将上传到华为云 OBS 存储，需要配置 OBS 公开访问及跨域策略</p>
@@ -92,7 +92,7 @@
             <button class="layui-btn layui-btn-sm layui-btn-normal" lay-submit lay-filter="obs">保存</button>
             <button class="layui-btn layui-btn-sm layui-btn-primary" id="reset">取消</button>
         </div>
-    </form>
+    </div>
 @endsection
 
 @section('script')

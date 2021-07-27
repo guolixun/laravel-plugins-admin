@@ -55,8 +55,6 @@ return [
     |
     */
     'database' => [
-        // user tables and model
-        // 'users_table' => 'users',
         // menu table
         'menu_table' => 'permissions',
         //setting table

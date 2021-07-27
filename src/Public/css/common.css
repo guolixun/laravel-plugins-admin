@@ -1,10 +1,7 @@
 /*
 * 后台通用样式
 */
-body {
-    color: #333;
-    font-size: 12px;
-}
+
 .layui-table-cell {
     height: auto;
 }
@@ -73,13 +70,6 @@ body {
 .margin-left-5 {
     margin-left: 5px !important;
 }
-/*上间距*/
-.margin-top-10 {
-    margin-top: 10px !important;
-}
-.margin-top-20 {
-    margin-top: 20px !important;
-}
 /*剧中对齐*/
 .text-align {
     text-align:center;
@@ -112,4 +102,46 @@ body {
     top: unset!important;
     bottom: -10px!important;
 }
+
+/*! 块阴影 */
+.shadow {
+    box-shadow: 0 2px 3px 0 rgb(0 0 0 / 22%);
+}
+
+/*! 字体 */
+.font-s10 { font-size: 10px; !important;}
+.font-s12 { font-size: 12px; !important;}
+.font-s14 { font-size: 14px; !important;}
+.font-s16 { font-size: 16px; !important;}
+
+/*! 间距 */
+.padding-0 { padding: 0 !important }
+.padding-5 { padding: 5px !important }
+.padding-10 { padding: 10px !important }
+.padding-15 { padding: 15px !important }
+.padding-20 { padding: 20px !important }
+.padding-left-0 { padding-left: 0 !important }
+.padding-left-5 { padding-left: 5px !important }
+.padding-left-10 { padding-left: 10px !important }
+.margin-0 { margin: 0 !important }
+.margin-5 { margin: 5px !important }
+.margin-10 { margin: 10px !important }
+.margin-15 { margin: 15px !important }
+.margin-20 { margin: 20px !important }
+.margin-left-0 { margin-left: 0 !important }
+.margin-left-5 { margin-left: 5px !important }
+.margin-left-10 { margin-left: 10px !important }
+.margin-left-15 { margin-left: 15px !important }
+.margin-left-20 { margin-left: 20px !important }
+.margin-top-0 { margin-top: 0 !important }
+.margin-top-5 { margin-top: 5px !important }
+.margin-top-10 { margin-top: 10px !important }
+.margin-top-15 { margin-top: 15px !important }
+.margin-top-20 { margin-top: 20px !important }
+
+
+
+
+
+
 

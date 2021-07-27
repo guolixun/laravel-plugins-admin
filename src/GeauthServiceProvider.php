@@ -64,7 +64,7 @@ class GeauthServiceProvider extends ServiceProvider
             //发布静态文件
             __DIR__ . DIRECTORY_SEPARATOR . 'Public' => public_path('geauth'),
             //发布辅助函数
-//            __DIR__ . DIRECTORY_SEPARATOR . 'helpers.php' => app_path('helpers.php'),
+            //__DIR__ . DIRECTORY_SEPARATOR . 'helpers.php' => app_path('helpers.php'),
         ]);
     }
 }
